@@ -39,7 +39,6 @@ void setup() {
   pinMode(usSensor1Trigger, OUTPUT);
   pinMode(usSensor1Echo, INPUT);
   
-  // Start serial communication for debugging
   Serial.begin(9600);
 }
 
