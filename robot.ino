@@ -95,10 +95,53 @@ if (line_sau >=1){dithang();}//đụng line sau thì lùi lại
 
   //camrbien hc-sr04
   //cambientrai  
-    if(cambientrai() < 5)
+  //bam tuong trai
+    if(cambiengiua() > 5 )
     {
-     void xichphai();
+      dithang();
+      if(cambientrai() < 5)
+      {
+        dithang();
+      }
+      else
+      {
+        dithang();
+        delay(1000);
+        quaytrai();
+      }
     }
+    //tuong truoc mat
+    if(cambiengiua() < 5 && cambientrai() > 5)
+    {
+      quaytrai();
+      dithang();
+      delay(2000);
+    }
+
+    // chu U
+    if(cambientrai() < 5 && cambiengiua() <5 && cambienphai() <5)
+    {
+      quaytrai();
+      delay(2000);
+      quaytrai();
+    }
+
+    //chu L trai
+    if(cambiengiua() < 5 && cambientrai() < 5)
+    {
+      quayphai();
+      dithang();
+      delay(2000);
+    }    
+    //chu L phai
+    if(cambiengiua() <5 && cambienphai() <5 )
+    {
+      quaytrai();
+      dithang();
+      delay(2000);
+
+    }
+    
     
 
     
@@ -125,12 +168,16 @@ void quaytrai(){
            digitalWrite(inA2,LOW);
            digitalWrite(inB1,HIGH);
            digitalWrite(inB2,LOW);
+           //tuy thuoc vo banh chinh thoi gian delay
+           delay(5000);
 }
 void quayphai(){
            digitalWrite(inA1,HIGH);
            digitalWrite(inA2,LOW);
            digitalWrite(inB1,LOW);
            digitalWrite(inB2,LOW);
+           //tuy thuoc vo banh chinh thoi gian delay
+           delay(5000);
 }
 void xichtrai(){
       analogWrite(ENA, 120);
